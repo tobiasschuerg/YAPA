@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:p="clr-namespace:YAPA.Properties"
         Title="YAPA"
-        Height="80" 
+        Height="40" 
         Width="250" 
         ShowInTaskbar="True" 
         ResizeMode="NoResize" 
@@ -39,7 +39,7 @@
         <TextBlock x:Name="CurrentTime"
                Cursor="Arrow"
                FontFamily="Segoe UI Light"
-               FontSize="60"
+               FontSize="30"
                Foreground="{Binding TextBrush}"
                Opacity="{Binding ClockOpacity}"
                Background="Transparent"    
@@ -171,6 +171,28 @@
 				  BlurRadius="10" />
                 </Button.Effect>
             </Button>
+            <TextBlock x:Name="CurrentPeriod"
+                   Cursor="Arrow"
+                   FontFamily="Segoe UI"
+                   FontStretch="UltraCondensed"
+                   FontSize="10"
+                   Foreground="{Binding TextBrush}"
+                   Opacity="{Binding ClockOpacity}"
+                   HorizontalAlignment="Right" 
+                   VerticalAlignment="Center"
+                   Height="10" 
+                   Text=""
+                   ToolTip="Current period"
+                   Width="10" >
+                <TextBlock.Effect>
+                    <DropShadowEffect
+				  ShadowDepth="0"
+				  Direction="0"
+				  Color="{Binding TextShadowColor}"
+				  Opacity="{Binding ShadowOpacity}"
+				  BlurRadius="10" />
+                </TextBlock.Effect>
+            </TextBlock>
 
             <Button x:Name="Stop"
                 Command=""
@@ -209,29 +231,6 @@
 				  BlurRadius="10" />
                 </Button.Effect>
             </Button>
-
-            <TextBlock x:Name="CurrentPeriod"
-                   Cursor="Arrow"
-                   FontFamily="Segoe UI"
-                   FontStretch="UltraCondensed"
-                   FontSize="16"
-                   Foreground="{Binding TextBrush}"
-                   Opacity="{Binding ClockOpacity}"
-                   HorizontalAlignment="Right" 
-                   VerticalAlignment="Center"
-                   Height="20" 
-                   Text=""
-                   ToolTip="Current period"
-                   Width="20" >
-                <TextBlock.Effect>
-                    <DropShadowEffect
-				  ShadowDepth="0"
-				  Direction="0"
-				  Color="{Binding TextShadowColor}"
-				  Opacity="{Binding ShadowOpacity}"
-				  BlurRadius="10" />
-                </TextBlock.Effect>
-            </TextBlock>
         </StackPanel>
     </Grid>
 </Window>
